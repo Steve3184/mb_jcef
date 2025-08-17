@@ -52,11 +52,13 @@ else
     DISTRIB_LIB_PATH="$DISTRIB_PATH/bin/lib/$1"
     JOGAMP_JAR_PATH="$JOGAMP_PATH/jar"
     OUT_BINARY_PATH="$OUT_PATH/Release"
-
+    ls -la $OUT_BINARY_PATH
     # Alternately look in the CMake output path.
     if [ ! -d "$OUT_BINARY_PATH" ]; then
       OUT_BINARY_PATH="${DIR}/jcef_build/native/Release"
     fi
+    ls -la $DIR/jcef_build/
+    ls -la $DIR/jcef_build/native/
     if [ ! -d "$OUT_BINARY_PATH" ]; then
       echo "ERROR: Native Release build output path does not exist"
       exit 1
